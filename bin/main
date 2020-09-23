@@ -1,3 +1,9 @@
 #!/usr/bin/env ruby
 
-puts 'Hello world'
+# 1. Prompt both users to give their names
+# 2. Print game instructions and prompt user to proceed by saying yes or no
+# 3. Print the tic-tac-toe board and prompt the first user for their move
+# 4. Check if the move is a win, update the board and print the updated board
+# 5. Prompt the second user for their move
+# 6. Check if the move is a win, update the board and print the updated board
+# 7. Repeat the steps from 3 to 6, until it's a win or draw
