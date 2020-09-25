@@ -19,29 +19,37 @@ def winner(move)
   winning_move == move
 end
 
+def announce_winner(player)
+  # This function declares the winner
+
+  puts "#{player}, Congratulations! You won."
+end
+
 # 4. Repeatedly ask the players to make moves till the win/draw condition is met
 rounds = 0
 loop do
-  puts "
- _________________
-|__a__|__b__|__c__|
-|__d__|__e__|__f__|
-|__g__|__h__|__i__|
+  board = "
+  _________________
+ |__a__|__b__|__c__|
+ |__d__|__e__|__f__|
+ |__g__|__h__|__i__|
 
-"
+ "
+  puts board
   puts "#{player1}, Please choose a move by typing one of the letters"
   player1_move = gets.chomp.downcase
   if winner player1_move
-    puts "#{player1}, Congratulations! You won."
+    announce_winner(player1)
     break
   end
 
   break puts 'Game is a draw!' if !winner(player1_move) && rounds == 4
 
+  puts board
   puts "#{player2}, Please choose a move by typing one of the letters"
   player2_move = gets.chomp.downcase
   if winner player2_move
-    puts "#{player2}, Congratulations! You won."
+    announce_winner(player2)
     break
   end
 
