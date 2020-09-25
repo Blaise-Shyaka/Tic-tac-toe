@@ -55,6 +55,7 @@ class TicTacToe
         # It announces who is the winner
 		def announce_winner(player, input)
 			# Congratulate player if input is a winner move
+			return "Congratulations #{player}! You won."
     end
 end
 
