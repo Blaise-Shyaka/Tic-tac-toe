@@ -47,7 +47,9 @@ class TicTacToe
         # It checks if the game is won or if it's a draw
 		def winner_move?(input)
 			# Get the last 2 elements of the player moves array and concatenate the input
+			potential_move = board.last(2) << input
 			# Return Check in the resultant array exists in the winner_moves constant
+			return WINNING_MOVES.has_value(potential_move)
     end
     # Announce winner method
         # It announces who is the winner
