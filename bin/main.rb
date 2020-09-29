@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# rubocop:disable Lint/UselessAssignment
+
 # 1. Prompt both users to give their names
 puts "Player 1, what's your name?"
 player1 = gets.chomp
@@ -51,6 +53,8 @@ loop do
     announce_winner(player2)
     break
   end
-  
+
   rounds += 1
 end
+
+# rubocop:enable Lint/UselessAssignment
