@@ -21,11 +21,16 @@ puts "Welcome #{player1.name} and #{player2.name}"
 # Ask Users if they want to see game instructions.
 puts 'Do you want to see game instructions? [y/n]'
 response = gets.chomp
-puts 'Instructions' if response == 'y'
+if response == 'y'
+  puts '====INSTRUCTIONS===='
+  puts ''
+  game.instructions.each { |instr| puts instr }
+  puts ''
+  puts '===End of instructions==='
+end
 
 rounds = 0
 loop do
-  puts rounds
   puts game.print_board
   puts "#{player1.name}, Please choose a move by typing one of the letters"
   player1_move = gets.chomp.downcase

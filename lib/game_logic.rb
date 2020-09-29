@@ -37,5 +37,12 @@ class TicTacToe
 
  "
   end
+
+  def instructions
+    instr_one = '1. Once prompted to enter your name, use only letters.'
+    instr_two = '2. Choose letters shown on the board except X and O.'
+    instr_three = '3. To beat the opponent, get 3 straight Xs or Os'
+    [instr_one, instr_two, instr_three]
+  end
 end
 # rubocop:enable Metrics/AbcSize
