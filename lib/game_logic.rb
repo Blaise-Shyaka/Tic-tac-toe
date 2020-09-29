@@ -1,24 +1,13 @@
 class TicTacToe
-  attr_accessor :player1, :player2, :board, :winning_moves
+  attr_accessor :board, :winning_moves
 
   def initialize
     @board = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
-    @player1
-    @player2
 		@winning_moves = {}
 	end
 
-	def update_board(player, input)
-		player1_move_sign = 'X'
-		player2_move_sign = 'O'
-		
-		if player == player1
-			self.board[self.board.index(input)] = player1_move_sign
-		end
-
-		if player == player2
-			self.board[self.board.index(input)] = player2_move_sign
-		end
+	def update_board(player_sign, input)
+		self.board[self.board.index(input)] = player_sign
 
 		self.winning_moves = {
 			move1: [self.board[0], self.board[1], self.board[2]],

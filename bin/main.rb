@@ -1,18 +1,24 @@
 #!/usr/bin/env ruby
 require_relative '../lib/game_logic'
+require_relative '../lib/player'
 
+# Initialize the game and two players instances
 game = TicTacToe.new
+player1 = Player.new
+player2 = Player.new
+
 # 1. Prompt both users to give their names
 puts "Player 1, what's your name?"
-game.player1 = gets.chomp
+player1.name = gets.chomp
 puts '=============================='
 puts "Awesome! Player 2, what's your name?"
-game.player2 = gets.chomp
+player2.name = gets.chomp
 puts '=============================='
-puts "Welcome #{game.player1} and #{game.player2}"
+puts "Welcome #{player1.name} and #{player2.name}"
+
+# Ask Users if they want to see game instructions.
 puts 'Do you want to see game instructions? [y/n]'
 response = gets.chomp
-# 2. If yes, print game instructions! If not, proceed with the following step.
 puts 'Instructions' if response == 'y'
 
 rounds = 0
@@ -25,23 +31,24 @@ loop do
  |__#{game.board[6]}__|__#{game.board[7]}__|__#{game.board[8]}__|
 
  "
-  puts "#{game.player1}, Please choose a move by typing one of the letters"
+  puts "#{player1.name}, Please choose a move by typing one of the letters"
   player1_move = gets.chomp.downcase
-  while (!game.valid_move? player1_move)
-    puts "Wrong input #{game.player1}, Try again!"
+  player1.player_sign = 'X'
+
+  until game.valid_move? player1_move
+    puts "Wrong input #{player1.name}, Try again!"
     player1_move = gets.chomp.downcase
   end
-  puts "Player one's move is #{player1_move}"
-  game.update_board(game.player1, player1_move)
-  puts game.winning_moves
+
+  game.update_board(player1.player_sign, player1_move)
+
   if game.winner_move
-    puts "Player1, you won"
+    puts "Congratulations #{player1.name}, you won!"
     break
   end
-  game.update_board(game.player1, player1_move)
-  #puts "player1 moves: #{game.player1_moves}"
 
   break puts 'Game is a draw!' if (rounds >= 4) && !game.winner_move
+
   puts "
   _________________
  |__#{game.board[0]}__|__#{game.board[1]}__|__#{game.board[2]}__|
@@ -49,19 +56,21 @@ loop do
  |__#{game.board[6]}__|__#{game.board[7]}__|__#{game.board[8]}__|
 
  "
-  puts "#{game.player2}, Please choose a move by typing one of the letters"
+  puts "#{player2.name}, Please choose a move by typing one of the letters"
   player2_move = gets.chomp.downcase
-  while (!game.valid_move? player2_move)
-    puts "Wrong input #{game.player2}, Try again!"
+  player2.player_sign = 'O'
+
+  until game.valid_move? player2_move
+    puts "Wrong input #{player2.name}, Try again!"
     player2_move = gets.chomp.downcase
   end
-  game.update_board(game.player2, player2_move)
-  puts game.winning_moves
+
+  game.update_board(player2.player_sign, player2_move)
+
   if game.winner_move
-    puts "Player2, you won"
+    puts "Congratulations #{player2.name}, you won!"
     break
   end
-  game.update_board(game.player2, player2_move)
-  #puts "player2 moves: #{game.player2_moves}"
+
   rounds += 1
 end
