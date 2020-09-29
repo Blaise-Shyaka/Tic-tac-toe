@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+# rubocop:disable Metrics/BlockLength
+
 require_relative '../lib/game_logic'
 require_relative '../lib/player'
 
@@ -74,3 +76,4 @@ loop do
 
   rounds += 1
 end
+# rubocop:enable Metrics/BlockLength

@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/AbcSize
 # Description/Explanation of the TicTacToe class
 class TicTacToe
   attr_accessor :board, :winning_moves
@@ -27,3 +28,4 @@ class TicTacToe
     (input != 'x' || input != 'o') && (board.include? input)
   end
 end
+# rubocop:enable Metrics/AbcSize
