@@ -45,7 +45,7 @@ loop do
   player1.player_sign = 'X'
 
   until game.valid_move? player1_move
-    puts "Wrong input #{player1.name}, Try again!"
+    puts "#{player1.name}, #{game.warning}. Try again!"
     player1_move = gets.chomp.downcase
   end
 
@@ -64,7 +64,7 @@ loop do
   player2.player_sign = 'O'
 
   until game.valid_move? player2_move
-    puts "Wrong input #{player2.name}, Try again!"
+    puts "#{player2.name}, #{game.warning}. Try again!"
     player2_move = gets.chomp.downcase
   end
 

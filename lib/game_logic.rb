@@ -1,10 +1,12 @@
 # rubocop:disable Metrics/AbcSize
+# rubocop:disable Lint/Void
 # Description/Explanation of the TicTacToe class
 class TicTacToe
-  attr_accessor :board, :winning_moves
+  attr_accessor :board, :winning_moves, :warning
 
   def initialize
     @board = %w[a b c d e f g h i]
+    @warning
     @winning_moves = {}
   end
 
@@ -25,7 +27,18 @@ class TicTacToe
   end
 
   def valid_move?(input)
-    (input != 'x' || input != 'o') && (board.include? input)
+    occupied_space_sign = %w[x o]
+
+    if occupied_space_sign.include? input
+      self.warning = 'This place is occupied! Choose letters other than X or O'
+      return false
+    end
+
+    unless board.include? input
+      self.warning = 'Choose only letters displayed on the board'
+      return false
+    end
+    true
   end
 
   def print_board
@@ -46,3 +59,4 @@ class TicTacToe
   end
 end
 # rubocop:enable Metrics/AbcSize
+# rubocop:enable Lint/Void
