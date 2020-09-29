@@ -51,6 +51,7 @@ loop do
   game.update_board(player1.player_sign, player1_move)
 
   if game.winner_move
+    puts game.print_board
     puts "Congratulations #{player1.name}, you won!"
     break
   end
@@ -70,6 +71,7 @@ loop do
   game.update_board(player2.player_sign, player2_move)
 
   if game.winner_move
+    puts game.print_board
     puts "Congratulations #{player2.name}, you won!"
     break
   end

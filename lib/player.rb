@@ -9,7 +9,6 @@ class Player
   end
 
   def valid_player_name(name)
-    puts name.is_a? String
     if name.length.zero?
       self.warning = 'Name cannot be empty'
       return false
