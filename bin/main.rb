@@ -11,10 +11,18 @@ player2 = Player.new
 
 # 1. Prompt both users to give their names
 puts "Player 1, what's your name?"
-player1.name = gets.chomp
+player1.name = gets.chomp.strip
+until player1.valid_player_name(player1.name)
+  puts "#{player1.warning}! Try again."
+  player1.name = gets.chomp.strip
+end
 puts '=============================='
 puts "Awesome! Player 2, what's your name?"
 player2.name = gets.chomp
+until player2.valid_player_name(player2.name)
+  puts "#{player2.warning}! Try again."
+  player2.name = gets.chomp
+end
 puts '=============================='
 puts "Welcome #{player1.name} and #{player2.name}"
 
