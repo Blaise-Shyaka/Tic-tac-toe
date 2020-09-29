@@ -27,5 +27,15 @@ class TicTacToe
   def valid_move?(input)
     (input != 'x' || input != 'o') && (board.include? input)
   end
+
+  def print_board
+    "
+  _________________
+ |__#{board[0]}__|__#{board[1]}__|__#{board[2]}__|
+ |__#{board[3]}__|__#{board[4]}__|__#{board[5]}__|
+ |__#{board[6]}__|__#{board[7]}__|__#{board[8]}__|
+
+ "
+  end
 end
 # rubocop:enable Metrics/AbcSize
