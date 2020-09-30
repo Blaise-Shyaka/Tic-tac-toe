@@ -21,7 +21,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Install
 
-- `git clone` [repo](https://github.com/Blaise-Shyaka/Tic-tac-toe)
+- `git clone https://github.com/Blaise-Shyaka/Tic-tac-toe`
 - `cd Tic-tac-toe`
 
 ### Start the game
