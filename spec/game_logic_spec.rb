@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 require_relative '../lib/game_logic'
 
 describe 'TicTacToe' do
@@ -107,3 +108,4 @@ describe 'TicTacToe' do
     end
   end
 end
+# rubocop:enable Layout/LineLength
