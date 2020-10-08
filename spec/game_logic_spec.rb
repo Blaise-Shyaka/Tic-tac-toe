@@ -49,4 +49,38 @@ describe 'TicTacToe' do
       expect(game.winning_moves[:move8]).to include(player_sign)
     end
   end
+
+  describe 'winner_move' do
+    it 'will return false if no consecutive player sign in the board' do
+      expect(game.winner_move).to be false
+    end
+
+    it 'will return true if there is three consecutive player_sign on the board' do
+      input = %w[a b c]
+      player_sign = 'X'
+      game.update_board(player_sign, input[0])
+      game.update_board(player_sign, input[1])
+      game.update_board(player_sign, input[2])
+      expect(game.winner_move).to be true
+    end
+  end
+
+  describe 'valid_move?' do
+    it 'will check if the place is not taken' do
+      input = 'a'
+      player_sign = 'X'
+      game.update_board(player_sign, input)
+      expect(game.valid_move?(input)).to be false
+    end
+
+    it 'will check if selection is valid should return false' do
+      input = 'k'
+      expect(game.valid_move?(input)).to be false
+    end
+
+    it 'will check if selection is valid should return false' do
+      input = 'c'
+      expect(game.valid_move?(input)).to be true
+    end
+  end
 end
