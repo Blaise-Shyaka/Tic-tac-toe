@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 require_relative '../lib/game_logic'
 
 describe 'TicTacToe' do
@@ -97,4 +98,19 @@ describe 'TicTacToe' do
       expect(game.print_board.class).to eq(String)
     end
   end
+
+  describe '#instructions' do
+    it 'Should return an array' do
+      expect(game.instructions.class).to eq(Array)
+    end
+
+    it 'Should return an array of three elements' do
+      expect(game.instructions.length).to eq(3)
+    end
+
+    it 'Should return an array of strings' do
+      expect(game.instructions.all?(String)).to be true
+    end
+  end
 end
+# rubocop:enable Layout/LineLength
