@@ -78,6 +78,11 @@ describe 'TicTacToe' do
       expect(game.valid_move?(input)).to be false
     end
 
+    it 'will check if not input provide it should return false' do
+      input = ''
+      expect(game.valid_move?(input)).to be false
+    end
+
     it 'will check if selection is valid should return false' do
       input = 'c'
       expect(game.valid_move?(input)).to be true
