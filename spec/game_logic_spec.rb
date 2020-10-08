@@ -83,4 +83,13 @@ describe 'TicTacToe' do
       expect(game.valid_move?(input)).to be true
     end
   end
+
+  describe 'print_board' do
+    it 'displays the board' do
+      expect(game.print_board).to eq("\n  _________________\n |__a__|__b__|__c__|\n |__d__|__e__|__f__|\n |__g__|__h__|__i__|\n\n ")
+    end
+    it 'will return a string' do
+      expect(game.print_board.class).to eq(String)
+    end
+  end
 end
