@@ -55,6 +55,12 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@blaise_shyaka95](https://twitter.com/blaise_shyaka95)
 - LinkedIn: [Blaise Pascal SHYAKA](https://linkedin.com/in/blaise-pascal-shyaka-b1340b111)
 
+👤 **Mariana A. Campos Garcia**
+
+- GitHub: [@Atenaiis](https://github.com/Atenaiis)
+- Twitter: [@SopranoMarian](https://twitter.com/@SopranoMarian)
+- LinkedIn: [Mariana A. Campos Garcia](https://linkedin.com/in/mariana-atenai-campos-garcia-a30791143/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
